@@ -56,7 +56,7 @@ def get_style_model_and_losses(cnn, normalization_mean, normalization_std,
             model.add_module("style_loss_{}".format(i), style_loss)
             style_losses.append(style_loss)
 
-    # now we trim off the layers after the last content and style losses
+
     for i in range(len(model) - 1, -1, -1):
         if isinstance(model[i], ContentLoss) or isinstance(model[i], StyleLoss):
             break
@@ -66,7 +66,7 @@ def get_style_model_and_losses(cnn, normalization_mean, normalization_std,
     return model, style_losses, content_losses
 
 def get_input_optimizer(input_img):
-    # this line to show that input is a parameter that requires a gradient
+
     optimizer = optim.LBFGS([input_img.requires_grad_()])
     return optimizer
 
@@ -86,7 +86,7 @@ def run_style_transfer(cnn, normalization_mean, normalization_std,
     while run[0] <= num_steps:
 
         def closure():
-            # correct the values of updated input image
+
             input_img.data.clamp_(0, 1)
 
             optimizer.zero_grad()
