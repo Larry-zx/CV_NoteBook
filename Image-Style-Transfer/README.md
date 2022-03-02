@@ -14,7 +14,7 @@
 
 > 内容图和随机噪声图经过多次卷积滤波后，conten和noise在第4层的feature map的距离的平方和
 
-![LC](http://latex.codecogs.com/gif.latex?L_{content}(F,P,l) = \dfrac{1}{2}\sum_{i,j}(F_{ij}^l-P_{ij}^l)^2)
+![LC](function_pic/LC.png)
 
 ## Loss of style
 
@@ -26,9 +26,9 @@
 >
 > 将5层的结果加权求和
 
-![gram](http://latex.codecogs.com/gif.latex?G_{ij}^l =\sum_{k}F_{ik}^lF_{kj}^l)
+![LC](function_pic/Gram.png)
 
-![gram](http://latex.codecogs.com/gif.latex?E_{l} =\dfrac{1}{4N_{l}^2M_{l}^2}\sum_{ij}(G_{ij}^l-A_{ij}^l)^2)
+![LC](function_pic/LS.png)
 
 ## 实验图
 
